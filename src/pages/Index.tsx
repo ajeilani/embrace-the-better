@@ -19,19 +19,30 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20 pb-24">
-      {/* Header with gradient and decorative background */}
-      <header className="relative overflow-hidden bg-gradient-to-br from-primary-glow via-accent to-primary text-foreground px-6 pt-12 pb-8 rounded-b-[2rem] shadow-lg">
-        {/* Decorative background elements */}
+      {/* Header with light purple and bubble patterns */}
+      <header className="relative overflow-hidden bg-gradient-to-br from-purple-100 via-purple-50 to-indigo-100 text-foreground px-6 pt-12 pb-8 rounded-b-[2rem] shadow-lg">
+        {/* Decorative bubble elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/30 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute top-12 -left-12 w-48 h-48 bg-white/25 rounded-full blur-2xl" />
-          <div className="absolute -bottom-16 right-1/3 w-56 h-56 bg-white/20 rounded-full blur-3xl" />
+          {/* Large bubbles */}
+          <div className="absolute -top-20 -right-20 w-56 h-56 bg-purple-200/40 rounded-full blur-xl" />
+          <div className="absolute top-16 -left-16 w-40 h-40 bg-indigo-200/40 rounded-full blur-lg" />
+          <div className="absolute -bottom-12 right-1/4 w-48 h-48 bg-purple-300/30 rounded-full blur-xl" />
           
-          {/* Subtle pattern overlay */}
-          <div className="absolute inset-0 opacity-20" 
+          {/* Medium bubbles */}
+          <div className="absolute top-8 right-1/3 w-32 h-32 bg-purple-200/30 rounded-full blur-lg animate-pulse" />
+          <div className="absolute bottom-12 left-1/4 w-28 h-28 bg-indigo-200/30 rounded-full blur-md" />
+          <div className="absolute top-24 right-12 w-24 h-24 bg-purple-300/40 rounded-full blur-md" />
+          
+          {/* Small bubbles */}
+          <div className="absolute top-32 left-1/2 w-16 h-16 bg-purple-200/50 rounded-full blur-sm" />
+          <div className="absolute bottom-20 right-1/2 w-20 h-20 bg-indigo-200/40 rounded-full blur-sm animate-pulse" />
+          <div className="absolute top-40 left-12 w-12 h-12 bg-purple-300/50 rounded-full blur-sm" />
+          
+          {/* Circle pattern overlay */}
+          <div className="absolute inset-0 opacity-30" 
                style={{
-                 backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-                 backgroundSize: '32px 32px'
+                 backgroundImage: `radial-gradient(circle at 3px 3px, rgb(167, 139, 250) 2px, transparent 0)`,
+                 backgroundSize: '48px 48px'
                }} 
           />
         </div>
