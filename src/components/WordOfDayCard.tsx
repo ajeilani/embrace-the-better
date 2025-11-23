@@ -1,4 +1,4 @@
-import { Volume2 } from "lucide-react";
+import { Volume2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -16,67 +16,83 @@ export const WordOfDayCard = () => {
 
   const handleTouchEnd = () => {
     if (touchStart - touchEnd > 75) {
-      // Swiped left - could load next word
       console.log("Swiped left");
     }
 
     if (touchStart - touchEnd < -75) {
-      // Swiped right - could load previous word
       console.log("Swiped right");
     }
   };
 
   return (
     <div 
-      className="relative overflow-hidden rounded-2xl bg-card border border-border p-4 shadow-md touch-pan-y sm:rounded-3xl sm:p-5"
+      className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/5 via-primary-glow/10 to-accent/5 border border-primary/10 p-5 shadow-[var(--shadow-card)] touch-pan-y transition-all duration-300 hover:shadow-[var(--shadow-card-hover)] sm:rounded-3xl sm:p-6"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Header */}
-      <div className="mb-3 flex items-center gap-2 sm:mb-4">
-        <span className="text-lg sm:text-xl">✨</span>
-        <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          Word of the Day
-        </span>
+      {/* Animated background gradient */}
+      <div className="absolute inset-0 bg-[var(--gradient-card)] opacity-50" />
+      
+      {/* Shine effect */}
+      <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500">
+        <div className="absolute inset-0 bg-[var(--gradient-shine)] animate-[shimmer_2s_ease-in-out_infinite]" 
+             style={{
+               backgroundSize: '200% 100%',
+               animation: 'shimmer 3s ease-in-out infinite'
+             }} 
+        />
       </div>
 
-      {/* Main Content */}
-      <div className="space-y-3 sm:space-y-4">
-        {/* Arabic Word */}
-        <div className="space-y-1 text-center">
-          <h3 className="text-3xl font-bold text-foreground leading-tight sm:text-4xl">
-            جميلة
-          </h3>
-          <p className="text-lg font-semibold text-primary sm:text-xl">
-            Beautiful
-          </p>
+      {/* Content */}
+      <div className="relative">
+        {/* Header */}
+        <div className="mb-4 flex items-center justify-center gap-2 sm:mb-5">
+          <Sparkles className="h-5 w-5 text-primary animate-pulse" />
+          <span className="text-xs font-bold uppercase tracking-wider text-primary/80 sm:text-sm">
+            Word of the Day
+          </span>
+          <Sparkles className="h-5 w-5 text-primary animate-pulse" style={{ animationDelay: '0.5s' }} />
         </div>
 
-        {/* Example Sentence */}
-        <div className="space-y-2 rounded-xl bg-secondary/30 p-3 sm:rounded-xl sm:p-3.5 text-center">
-          <p className="text-base font-medium text-foreground leading-relaxed sm:text-lg" dir="rtl">
-            هذه وثيقة جميلة
-          </p>
-          <p className="text-sm text-accent font-medium leading-relaxed">
-            This is a beautiful document
-          </p>
+        {/* Main Content */}
+        <div className="space-y-4 sm:space-y-5">
+          {/* Arabic Word */}
+          <div className="space-y-2 text-center animate-fade-in">
+            <h3 className="text-4xl font-bold text-foreground leading-tight sm:text-5xl drop-shadow-sm">
+              جميلة
+            </h3>
+            <p className="text-xl font-bold bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent sm:text-2xl">
+              Beautiful
+            </p>
+          </div>
+
+          {/* Example Sentence */}
+          <div className="space-y-2.5 rounded-2xl bg-secondary/50 backdrop-blur-sm p-4 sm:rounded-2xl sm:p-5 text-center border border-primary/5 animate-scale-in" style={{ animationDelay: '0.1s' }}>
+            <p className="text-base font-semibold text-foreground leading-relaxed sm:text-lg" dir="rtl">
+              هذه وثيقة جميلة
+            </p>
+            <p className="text-sm font-medium bg-gradient-to-r from-accent via-primary to-primary-glow bg-clip-text text-transparent leading-relaxed sm:text-base">
+              This is a beautiful document
+            </p>
+          </div>
+
+          {/* Action Button */}
+          <Button 
+            className="w-full gap-2.5 text-sm h-11 sm:h-12 bg-gradient-to-r from-primary via-primary-glow to-accent hover:shadow-[var(--shadow-glow)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] font-semibold animate-scale-in"
+            style={{ animationDelay: '0.2s' }}
+          >
+            <Volume2 className="h-4 w-4 sm:h-5 sm:w-5" />
+            Listen to Pronunciation
+          </Button>
         </div>
 
-        {/* Action Button */}
-        <Button 
-          className="w-full gap-2 text-sm h-10 sm:h-11"
-        >
-          <Volume2 className="h-4 w-4" />
-          Listen
-        </Button>
-      </div>
-
-      {/* Swipe Indicator */}
-      <div className="mt-3 flex justify-center gap-1.5">
-        <div className="h-1 w-1 rounded-full bg-primary" />
-        <div className="h-1 w-1 rounded-full bg-muted" />
-        <div className="h-1 w-1 rounded-full bg-muted" />
+        {/* Swipe Indicator */}
+        <div className="mt-4 flex justify-center gap-2 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <div className="h-1.5 w-8 rounded-full bg-primary shadow-sm" />
+          <div className="h-1.5 w-1.5 rounded-full bg-muted" />
+          <div className="h-1.5 w-1.5 rounded-full bg-muted" />
+        </div>
       </div>
     </div>
   );
