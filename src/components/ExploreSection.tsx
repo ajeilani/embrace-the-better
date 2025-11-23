@@ -12,14 +12,14 @@ interface ExploreSectionProps {
 const ExploreCard = ({ icon, title, description, color, onClick }: ExploreSectionProps) => (
   <button
     onClick={onClick}
-    className="group flex items-start gap-4 rounded-2xl bg-card p-5 text-left shadow-sm transition-all hover:shadow-md hover:-translate-y-1 active:scale-[0.98]"
+    className="group flex items-start gap-3 rounded-2xl bg-card border border-border p-4 text-left shadow-sm transition-all hover:shadow-md hover:scale-[1.02] active:scale-[0.98] sm:gap-4 sm:p-5"
   >
-    <div className={`rounded-xl ${color} p-3 transition-transform group-hover:scale-110`}>
+    <div className={`rounded-xl ${color} p-2.5 transition-transform group-hover:scale-110 sm:p-3`}>
       {icon}
     </div>
-    <div className="flex-1">
-      <h3 className="mb-1 font-semibold text-foreground">{title}</h3>
-      <p className="text-sm text-muted-foreground">{description}</p>
+    <div className="flex-1 min-w-0">
+      <h3 className="mb-1 font-semibold text-foreground text-sm sm:text-base">{title}</h3>
+      <p className="text-xs text-muted-foreground sm:text-sm line-clamp-1">{description}</p>
     </div>
   </button>
 );
@@ -28,8 +28,8 @@ export const ExploreSection = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="space-y-3">
-      <h2 className="text-xl font-bold text-foreground">Explore</h2>
+    <div className="space-y-3 sm:space-y-4">
+      <h2 className="text-lg font-bold text-foreground sm:text-xl">Explore</h2>
       
       <div className="space-y-3">
         <ExploreCard

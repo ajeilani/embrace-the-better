@@ -7,16 +7,16 @@ import { Button } from "@/components/ui/button";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-secondary/5 to-background pb-24">
+    <div className="min-h-screen bg-background pb-24">
       {/* Header */}
-      <header className="px-6 pt-12 pb-6">
+      <header className="px-4 pt-8 pb-4 sm:px-6 sm:pt-12 sm:pb-6">
         <div className="mx-auto max-w-2xl">
-          <div className="mb-8 flex items-start justify-between">
+          <div className="mb-6 flex items-start justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-foreground">
+              <h1 className="text-2xl font-bold text-foreground sm:text-3xl">
                 Welcome Back 👋
               </h1>
-              <p className="mt-1 text-lg font-semibold text-purple-600">
+              <p className="mt-1 text-base font-semibold text-primary sm:text-lg">
                 Alexander
               </p>
             </div>
@@ -29,14 +29,14 @@ const Index = () => {
           <WordOfDayCard />
 
           {/* Metrics */}
-          <div className="mt-6">
+          <div className="mt-4 sm:mt-6">
             <MetricsCard />
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="mx-auto max-w-2xl px-6 py-6">
+      <main className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-6">
         <ExploreSection />
       </main>
 
