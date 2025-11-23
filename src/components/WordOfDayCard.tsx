@@ -34,11 +34,13 @@ export const WordOfDayCard = () => {
     >
       {/* Header */}
       <div className="mb-4 flex items-center justify-between sm:mb-5">
-        <div className="flex items-center gap-2 flex-1 justify-center">
-          <span className="text-lg sm:text-xl">✨</span>
-          <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground sm:text-sm">
-            Word of the Day
-          </span>
+        <div className="flex-1 flex justify-center">
+          <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
+            <span className="text-lg">✨</span>
+            <span className="text-sm font-bold text-primary">
+              Word of the Day
+            </span>
+          </div>
         </div>
         <Button
           variant="ghost"
