@@ -1,10 +1,11 @@
-import { Volume2 } from "lucide-react";
+import { Volume2, Bookmark } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 export const WordOfDayCard = () => {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
+  const [isSaved, setIsSaved] = useState(false);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
@@ -32,11 +33,21 @@ export const WordOfDayCard = () => {
       onTouchEnd={handleTouchEnd}
     >
       {/* Header */}
-      <div className="mb-4 flex items-center justify-center gap-2 sm:mb-5">
-        <span className="text-lg sm:text-xl">✨</span>
-        <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground sm:text-sm">
-          Word of the Day
-        </span>
+      <div className="mb-4 flex items-center justify-between sm:mb-5">
+        <div className="flex items-center gap-2 flex-1 justify-center">
+          <span className="text-lg sm:text-xl">✨</span>
+          <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground sm:text-sm">
+            Word of the Day
+          </span>
+        </div>
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => setIsSaved(!isSaved)}
+          className="h-8 w-8 rounded-full"
+        >
+          <Bookmark className={`h-4 w-4 ${isSaved ? 'fill-primary text-primary' : ''}`} />
+        </Button>
       </div>
 
       {/* Main Content */}
@@ -56,7 +67,7 @@ export const WordOfDayCard = () => {
           <p className="text-base font-semibold text-foreground leading-relaxed sm:text-lg" dir="rtl">
             هذه وثيقة جميلة
           </p>
-          <p className="text-sm font-bold text-muted-foreground leading-relaxed sm:text-base">
+          <p className="text-sm font-bold text-foreground leading-relaxed sm:text-base">
             This is a beautiful document
           </p>
         </div>
