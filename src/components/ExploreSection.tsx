@@ -12,14 +12,14 @@ interface ExploreSectionProps {
 const ExploreCard = ({ icon, title, description, color, onClick }: ExploreSectionProps) => (
   <button
     onClick={onClick}
-    className="group flex items-center gap-3 rounded-xl bg-card border border-border p-3.5 text-left shadow-sm transition-all hover:shadow-md hover:scale-[1.02] active:scale-[0.98] h-[70px] sm:h-[75px] sm:rounded-2xl sm:p-4"
+    className="group flex items-center gap-3 rounded-xl bg-card border border-border p-4 text-left shadow-sm transition-all hover:shadow-md hover:scale-[1.02] active:scale-[0.98] h-[75px] sm:h-[80px] sm:rounded-2xl sm:p-5 w-full"
   >
-    <div className={`flex-shrink-0 rounded-lg ${color} p-2 transition-transform group-hover:scale-110`}>
+    <div className={`flex-shrink-0 rounded-lg ${color} p-2.5 transition-transform group-hover:scale-110`}>
       {icon}
     </div>
     <div className="flex-1 min-w-0">
-      <h3 className="mb-0.5 font-semibold text-foreground text-sm leading-tight sm:text-base">{title}</h3>
-      <p className="text-xs text-muted-foreground leading-snug line-clamp-1">{description}</p>
+      <h3 className="mb-0.5 font-semibold text-foreground text-base leading-tight sm:text-lg">{title}</h3>
+      <p className="text-xs text-muted-foreground leading-snug line-clamp-1 sm:text-sm">{description}</p>
     </div>
   </button>
 );

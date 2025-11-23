@@ -44,7 +44,7 @@ export const WordOfDayCard = () => {
       {/* Main Content */}
       <div className="space-y-3 sm:space-y-4">
         {/* Arabic Word */}
-        <div className="space-y-1">
+        <div className="space-y-1 text-center">
           <h3 className="text-3xl font-bold text-foreground leading-tight sm:text-4xl">
             جميلة
           </h3>
@@ -54,19 +54,13 @@ export const WordOfDayCard = () => {
         </div>
 
         {/* Example Sentence */}
-        <div className="space-y-2 rounded-xl bg-secondary/30 p-3 sm:rounded-xl sm:p-3.5">
-          <div className="flex items-start gap-2">
-            <span className="text-xs text-muted-foreground font-medium mt-0.5">AR:</span>
-            <p className="text-base font-medium text-foreground leading-relaxed flex-1 sm:text-lg" dir="rtl">
-              هذه وثيقة جميلة
-            </p>
-          </div>
-          <div className="flex items-start gap-2">
-            <span className="text-xs text-muted-foreground font-medium mt-0.5">EN:</span>
-            <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-              This is a beautiful document
-            </p>
-          </div>
+        <div className="space-y-2 rounded-xl bg-secondary/30 p-3 sm:rounded-xl sm:p-3.5 text-center">
+          <p className="text-base font-medium text-foreground leading-relaxed sm:text-lg" dir="rtl">
+            هذه وثيقة جميلة
+          </p>
+          <p className="text-sm text-accent font-medium leading-relaxed">
+            This is a beautiful document
+          </p>
         </div>
 
         {/* Action Button */}
