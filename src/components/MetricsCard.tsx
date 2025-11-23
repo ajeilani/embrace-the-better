@@ -8,36 +8,36 @@ interface MetricItemProps {
 }
 
 const MetricItem = ({ icon, value, label, color }: MetricItemProps) => (
-  <div className="flex flex-col items-center gap-2 rounded-2xl bg-card border border-border p-3 sm:p-4 shadow-sm">
-    <div className={`rounded-xl ${color} p-2 sm:p-3`}>
+  <div className="flex flex-col items-center justify-center gap-2 rounded-xl bg-card border border-border p-3 shadow-sm min-h-[100px] sm:min-h-[110px] sm:rounded-2xl sm:p-4">
+    <div className={`rounded-lg ${color} p-2 sm:rounded-xl sm:p-2.5`}>
       {icon}
     </div>
     <div className="text-center">
-      <div className="text-xl font-bold text-foreground sm:text-2xl">{value}</div>
-      <div className="text-[10px] text-muted-foreground sm:text-xs">{label}</div>
+      <div className="text-lg font-bold text-foreground sm:text-xl">{value}</div>
+      <div className="text-[10px] text-muted-foreground whitespace-nowrap sm:text-xs">{label}</div>
     </div>
   </div>
 );
 
 export const MetricsCard = () => {
   return (
-    <div className="grid grid-cols-3 gap-3">
+    <div className="grid grid-cols-3 gap-2 sm:gap-3">
       <MetricItem
-        icon={<Flame className="h-5 w-5 text-orange-500" />}
+        icon={<Flame className="h-4 w-4 text-orange-500 sm:h-5 sm:w-5" />}
         value="7"
-        label="Day Streak"
+        label="Streak"
         color="bg-orange-50"
       />
       <MetricItem
-        icon={<Clock className="h-5 w-5 text-blue-500" />}
+        icon={<Clock className="h-4 w-4 text-blue-500 sm:h-5 sm:w-5" />}
         value="12.5h"
-        label="Total Time"
+        label="Time"
         color="bg-blue-50"
       />
       <MetricItem
-        icon={<Zap className="h-5 w-5 text-yellow-500" />}
+        icon={<Zap className="h-4 w-4 text-yellow-500 sm:h-5 sm:w-5" />}
         value="850"
-        label="XP Points"
+        label="XP"
         color="bg-yellow-50"
       />
     </div>
