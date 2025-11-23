@@ -69,13 +69,6 @@ export const WordOfDayCard = () => {
           Listen to Pronunciation
         </Button>
       </div>
-
-      {/* Swipe Indicator */}
-      <div className="mt-4 flex justify-center gap-2">
-        <div className="h-1.5 w-8 rounded-full bg-primary" />
-        <div className="h-1.5 w-1.5 rounded-full bg-muted" />
-        <div className="h-1.5 w-1.5 rounded-full bg-muted" />
-      </div>
     </div>
   );
 };
