@@ -56,7 +56,7 @@ export const WordOfDayCard = () => {
           <p className="text-base font-semibold text-foreground leading-relaxed sm:text-lg" dir="rtl">
             هذه وثيقة جميلة
           </p>
-          <p className="text-sm font-medium text-muted-foreground leading-relaxed sm:text-base">
+          <p className="text-sm font-bold text-muted-foreground leading-relaxed sm:text-base">
             This is a beautiful document
           </p>
         </div>
