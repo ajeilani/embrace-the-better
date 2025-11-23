@@ -35,8 +35,8 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-5">
+      {/* Main Content - Full Width */}
+      <main className="px-4 py-4 sm:px-6 sm:py-5">
         <ExploreSection />
       </main>
 
