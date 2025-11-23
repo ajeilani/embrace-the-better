@@ -29,7 +29,7 @@ export const ExploreSection = () => {
 
   return (
     <div className="space-y-3 sm:space-y-4">
-      <h2 className="text-lg font-bold text-foreground sm:text-xl px-4 sm:px-6">Explore</h2>
+      <h2 className="text-lg font-bold text-foreground sm:text-xl">Explore</h2>
       
       <div className="space-y-2.5">
         <ExploreCard
