@@ -63,40 +63,40 @@ const Flashcards = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20 pb-8">
+    <div className="min-h-screen bg-background pb-8">
       {/* Header */}
-      <header className="bg-gradient-to-br from-purple-100 via-purple-50 to-indigo-100 px-6 pt-12 pb-8">
+      <header className="bg-card border-b border-border/50 px-6 pt-8 pb-6 shadow-sm">
         <div className="max-w-2xl mx-auto">
           <Button
             variant="ghost"
             size="sm"
             onClick={() => navigate("/")}
-            className="mb-4 rounded-full"
+            className="mb-6 rounded-full hover:bg-secondary/80"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back
           </Button>
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between mb-6">
             <div>
-              <h1 className="text-3xl font-bold flex items-center gap-3">
-                <span className="text-4xl">{category.emoji}</span>
+              <h1 className="text-2xl sm:text-3xl font-bold flex items-center gap-3">
+                <span className="text-3xl sm:text-4xl">{category.emoji}</span>
                 {category.title}
               </h1>
-              <p className="text-muted-foreground mt-1">{category.level}</p>
+              <p className="text-muted-foreground mt-1.5 text-sm font-medium">{category.level}</p>
             </div>
             <div className="text-right">
-              <p className="text-sm text-muted-foreground">Progress</p>
-              <p className="text-2xl font-bold">{Math.round(progress)}%</p>
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">Progress</p>
+              <p className="text-3xl font-bold text-primary">{Math.round(progress)}%</p>
             </div>
           </div>
-          <Progress value={progress} className="h-2" />
+          <Progress value={progress} className="h-2.5 bg-secondary" />
         </div>
       </header>
 
       {/* Flashcard */}
       <main className="max-w-2xl mx-auto px-6 py-12">
-        <div className="mb-8">
-          <p className="text-center text-muted-foreground mb-4">
+        <div className="mb-12">
+          <p className="text-center text-base font-bold text-foreground mb-6">
             Card {currentIndex + 1} of {category.items.length}
           </p>
           <Flashcard
@@ -107,40 +107,43 @@ const Flashcards = () => {
         </div>
 
         {/* Navigation */}
-        <div className="flex items-center justify-center gap-4 mt-8">
+        <div className="flex items-center justify-center gap-4 mt-12">
           <Button
             variant="outline"
             size="lg"
             onClick={handlePrevious}
             disabled={currentIndex === 0}
-            className="rounded-full"
+            className="rounded-full w-14 h-14 p-0 shadow-md hover:shadow-lg border-2 disabled:opacity-30"
           >
-            <ChevronLeft className="h-5 w-5" />
+            <ChevronLeft className="h-6 w-6" />
           </Button>
           <Button
             size="lg"
             onClick={handleNext}
             disabled={currentIndex === category.items.length - 1 && completedCards.has(currentIndex)}
-            className="rounded-full px-8"
+            className={cn(
+              "rounded-full px-10 h-14 font-bold shadow-lg hover:shadow-xl transition-all duration-300",
+              currentIndex === category.items.length - 1 && "bg-green-600 hover:bg-green-700"
+            )}
           >
             {currentIndex === category.items.length - 1 ? "Complete" : "Next"}
-            <ChevronRight className="h-5 w-5 ml-2" />
+            <ChevronRight className="h-6 w-6 ml-2" />
           </Button>
         </div>
 
         {/* Quick navigation dots */}
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="flex justify-center gap-2.5 mt-10">
           {category.items.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={cn(
-                "w-2 h-2 rounded-full transition-all",
+                "rounded-full transition-all duration-300",
                 index === currentIndex
-                  ? "bg-primary w-6"
+                  ? "bg-primary w-8 h-3 shadow-md"
                   : completedCards.has(index)
-                  ? "bg-primary/50"
-                  : "bg-muted"
+                  ? "bg-green-500 w-3 h-3 shadow-sm"
+                  : "bg-muted w-3 h-3 hover:bg-muted-foreground/30"
               )}
             />
           ))}
