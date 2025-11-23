@@ -15,42 +15,45 @@ export const Flashcard = ({ item, onPlayAudio, isAudioPlaying }: FlashcardProps)
 
   return (
     <div className="perspective-1000 w-full max-w-md mx-auto">
+      {/* Glow effect behind card */}
+      <div className="absolute inset-0 bg-primary/5 rounded-3xl blur-2xl -z-10" />
+      
       <div
         onClick={() => setIsFlipped(!isFlipped)}
         className={cn(
-          "relative w-full h-80 transition-transform duration-500 cursor-pointer preserve-3d",
+          "relative w-full h-[400px] transition-transform duration-500 cursor-pointer preserve-3d",
           isFlipped && "rotate-y-180"
         )}
       >
         {/* Front of card (Arabic) */}
         <div className="absolute inset-0 backface-hidden">
-          <div className="h-full bg-gradient-to-br from-purple-100 to-indigo-100 rounded-3xl shadow-xl p-8 flex flex-col items-center justify-center space-y-6">
-            <p className="text-sm text-muted-foreground uppercase tracking-wider">Arabic</p>
-            <h2 className="text-6xl font-bold text-foreground text-center">{item.arabic}</h2>
-            <p className="text-lg text-muted-foreground">{item.pronunciation}</p>
+          <div className="h-full bg-card rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.12),0_20px_60px_rgb(0,0,0,0.08)] border border-border/50 p-8 flex flex-col items-center justify-center space-y-8">
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">Arabic</p>
+            <h2 className="text-7xl sm:text-8xl font-bold text-foreground text-center leading-tight">{item.arabic}</h2>
+            <p className="text-xl text-muted-foreground font-medium">{item.pronunciation}</p>
             <Button
-              variant="secondary"
               size="lg"
-              className="rounded-full bg-white/50 hover:bg-white/70"
+              className="rounded-full bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 px-6"
               onClick={(e) => {
                 e.stopPropagation();
                 onPlayAudio(item.arabic);
               }}
               disabled={isAudioPlaying}
             >
-              <Volume2 className="h-5 w-5" />
+              <Volume2 className="h-5 w-5 mr-2" />
+              Listen
             </Button>
-            <p className="text-sm text-muted-foreground/70">Tap to reveal</p>
+            <p className="text-sm text-muted-foreground/60 font-medium">Tap card to reveal</p>
           </div>
         </div>
 
         {/* Back of card (English) */}
         <div className="absolute inset-0 backface-hidden rotate-y-180">
-          <div className="h-full bg-gradient-to-br from-indigo-100 to-purple-100 rounded-3xl shadow-xl p-8 flex flex-col items-center justify-center space-y-6">
-            <p className="text-sm text-muted-foreground uppercase tracking-wider">English</p>
-            <h2 className="text-5xl font-bold text-foreground text-center">{item.english}</h2>
-            <p className="text-lg text-muted-foreground">{item.pronunciation}</p>
-            <p className="text-sm text-muted-foreground/70">Tap to flip back</p>
+          <div className="h-full bg-secondary/30 backdrop-blur-sm rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.12),0_20px_60px_rgb(0,0,0,0.08)] border border-border/50 p-8 flex flex-col items-center justify-center space-y-8">
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">English</p>
+            <h2 className="text-6xl sm:text-7xl font-bold text-foreground text-center leading-tight">{item.english}</h2>
+            <p className="text-xl text-muted-foreground font-medium">{item.pronunciation}</p>
+            <p className="text-sm text-muted-foreground/60 font-medium mt-4">Tap to flip back</p>
           </div>
         </div>
       </div>
