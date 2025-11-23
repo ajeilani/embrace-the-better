@@ -1,48 +1,83 @@
-import { Volume2, Bookmark } from "lucide-react";
+import { Volume2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 export const WordOfDayCard = () => {
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 75) {
+      // Swiped left - could load next word
+      console.log("Swiped left");
+    }
+
+    if (touchStart - touchEnd < -75) {
+      // Swiped right - could load previous word
+      console.log("Swiped right");
+    }
+  };
+
   return (
-    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-500 via-purple-600 to-indigo-600 p-6 text-white shadow-xl">
-      {/* Decorative elements */}
-      <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/10 blur-2xl" />
-      <div className="absolute -bottom-4 -left-4 h-24 w-24 rounded-full bg-white/10 blur-xl" />
-      
-      <div className="relative">
-        <div className="mb-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="text-2xl">✨</div>
-            <span className="text-sm font-semibold uppercase tracking-wide opacity-90">
-              Word of the Day
-            </span>
-          </div>
-          <Button size="icon" variant="ghost" className="h-8 w-8 text-white hover:bg-white/20">
-            <Bookmark className="h-4 w-4" />
-          </Button>
+    <div 
+      className="relative overflow-hidden rounded-3xl bg-card border border-border p-6 shadow-lg touch-pan-y"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      {/* Header */}
+      <div className="mb-6 flex items-center gap-2">
+        <span className="text-2xl">✨</span>
+        <span className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+          Word of the Day
+        </span>
+      </div>
+
+      {/* Main Content */}
+      <div className="space-y-6">
+        {/* Arabic Word */}
+        <div className="space-y-2">
+          <h3 className="text-5xl font-bold text-foreground leading-tight">
+            جميلة
+          </h3>
+          <p className="text-2xl font-semibold text-primary">
+            Beautiful
+          </p>
         </div>
 
-        <div className="mb-2">
-          <h3 className="text-4xl font-bold">جميلة</h3>
-          <p className="text-lg opacity-90">Beautiful</p>
-        </div>
-
-        <div className="mb-4 rounded-lg bg-white/10 p-3 backdrop-blur-sm">
-          <p className="text-sm leading-relaxed">
+        {/* Example Sentence */}
+        <div className="space-y-3 rounded-2xl bg-secondary/30 p-4">
+          <p className="text-xl font-medium text-foreground leading-relaxed" dir="rtl">
             هذه مكتوبة جميلة
           </p>
-          <p className="mt-1 text-xs opacity-80">
-            This is a beautiful written (document)
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            This is a beautiful written document
           </p>
         </div>
 
+        {/* Action Button */}
         <Button 
-          size="sm" 
-          variant="secondary" 
-          className="gap-2 bg-white/20 text-white hover:bg-white/30"
+          size="lg" 
+          className="w-full gap-2 text-base"
         >
-          <Volume2 className="h-4 w-4" />
-          Listen
+          <Volume2 className="h-5 w-5" />
+          Listen to pronunciation
         </Button>
+      </div>
+
+      {/* Swipe Indicator */}
+      <div className="mt-4 flex justify-center gap-1.5">
+        <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+        <div className="h-1.5 w-1.5 rounded-full bg-muted" />
+        <div className="h-1.5 w-1.5 rounded-full bg-muted" />
       </div>
     </div>
   );
