@@ -8,12 +8,12 @@ interface MetricItemProps {
 }
 
 const MetricItem = ({ icon, value, label, color }: MetricItemProps) => (
-  <div className="flex flex-col items-center justify-center gap-2 rounded-xl bg-card border border-border p-3 shadow-sm min-h-[100px] sm:min-h-[110px] sm:rounded-2xl sm:p-4">
-    <div className={`rounded-lg ${color} p-2 sm:rounded-xl sm:p-2.5`}>
+  <div className="flex flex-col items-center justify-center gap-1.5 rounded-xl bg-card border border-border p-3 shadow-sm h-[90px] sm:h-[95px] sm:rounded-2xl">
+    <div className={`rounded-lg ${color} p-2`}>
       {icon}
     </div>
     <div className="text-center">
-      <div className="text-lg font-bold text-foreground sm:text-xl">{value}</div>
+      <div className="text-base font-bold text-foreground sm:text-lg">{value}</div>
       <div className="text-[10px] text-muted-foreground whitespace-nowrap sm:text-xs">{label}</div>
     </div>
   </div>
