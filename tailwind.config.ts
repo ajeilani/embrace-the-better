@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        'arabic': ['Amiri', 'serif'],
+        'arabic': ['Cairo', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
