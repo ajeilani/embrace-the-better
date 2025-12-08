@@ -45,7 +45,7 @@ const Index = () => {
       </header>
 
       {/* Main Content */}
-      <main className="px-4 pt-6 sm:px-6 sm:pt-8">
+      <main className="px-4 pt-4 sm:px-6 sm:pt-5">
         <div className="mx-auto max-w-2xl">
           {/* Word of the Day */}
           <WordOfDayCard />
