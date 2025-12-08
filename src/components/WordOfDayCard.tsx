@@ -56,7 +56,7 @@ export const WordOfDayCard = () => {
       <div className="space-y-4 sm:space-y-5">
         {/* Arabic Word */}
         <div className="space-y-2 text-center">
-          <h3 className="text-4xl font-bold text-foreground leading-tight sm:text-5xl">
+          <h3 className="text-4xl font-arabic font-bold text-foreground leading-tight sm:text-5xl">
             جميلة
           </h3>
           <p className="text-xl font-bold text-primary sm:text-2xl">
@@ -66,7 +66,7 @@ export const WordOfDayCard = () => {
 
         {/* Example Sentence */}
         <div className="space-y-2.5 rounded-2xl bg-secondary/40 p-4 sm:p-5 text-center border border-border/50">
-          <p className="text-base font-semibold text-foreground leading-relaxed sm:text-lg" dir="rtl">
+          <p className="text-base font-arabic font-semibold text-foreground leading-relaxed sm:text-lg" dir="rtl">
             هذه وثيقة جميلة
           </p>
           <p className="text-sm font-bold text-foreground leading-relaxed sm:text-base">
