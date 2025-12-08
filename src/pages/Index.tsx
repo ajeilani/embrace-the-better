@@ -7,16 +7,14 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background pb-20 sm:pb-24">
       {/* Header */}
-      <header className="px-4 pt-6 pb-4 sm:px-6 sm:pt-8 sm:pb-5 animate-fade-in border-b border-border/50">
+      <header className="px-4 pt-4 pb-4 sm:px-6 sm:pt-6 sm:pb-5 animate-fade-in border-b border-border/50">
         <div className="mx-auto max-w-2xl">
           {/* Welcome Section */}
-          <div className="mb-4">
+          <div className="mb-5">
+            <p className="text-sm text-muted-foreground mb-1">Welcome Back 👋</p>
             <h1 className="text-2xl font-bold text-foreground sm:text-3xl">
-              Welcome Back 👋
-            </h1>
-            <p className="mt-1 text-base font-bold text-primary sm:text-lg">
               Alexander
-            </p>
+            </h1>
           </div>
 
           {/* Compact Metrics */}
