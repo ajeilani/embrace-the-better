@@ -29,7 +29,7 @@ export const Flashcard = ({ item, onPlayAudio, isAudioPlaying }: FlashcardProps)
         <div className="absolute inset-0 backface-hidden">
           <div className="h-full bg-card rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.12),0_20px_60px_rgb(0,0,0,0.08)] border border-border/50 p-8 flex flex-col items-center justify-center space-y-8">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">Arabic</p>
-            <h2 className="text-7xl sm:text-8xl font-bold text-foreground text-center leading-tight">{item.arabic}</h2>
+            <h2 className="text-7xl sm:text-8xl font-arabic font-bold text-foreground text-center leading-tight">{item.arabic}</h2>
             <p className="text-xl text-muted-foreground font-medium">{item.pronunciation}</p>
             <Button
               size="lg"
