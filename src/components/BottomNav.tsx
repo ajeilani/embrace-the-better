@@ -1,4 +1,4 @@
-import { Home, BookOpen, Video, MessageSquare, User } from "lucide-react";
+import { Home, BookOpen, Video, MessagesSquare, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface NavItem {
@@ -12,7 +12,7 @@ export const BottomNav = () => {
     { icon: <Home className="w-6 h-6" />, label: "Home" },
     { icon: <BookOpen className="w-6 h-6" />, label: "Learn", active: true },
     { icon: <Video className="w-6 h-6" />, label: "Videos" },
-    { icon: <MessageSquare className="w-6 h-6" />, label: "Debate" },
+    { icon: <MessagesSquare className="w-6 h-6" />, label: "Chats" },
     { icon: <User className="w-6 h-6" />, label: "Profile" },
   ];
 
