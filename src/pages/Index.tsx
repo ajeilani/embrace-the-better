@@ -2,6 +2,7 @@ import { Flame, Clock, Zap } from "lucide-react";
 import { WordOfDayCard } from "@/components/WordOfDayCard";
 import { ExploreSection } from "@/components/ExploreSection";
 import { BottomNav } from "@/components/BottomNav";
+import { OnboardingGuide } from "@/components/OnboardingGuide";
 
 const Index = () => {
   return (
@@ -59,6 +60,9 @@ const Index = () => {
 
       {/* Bottom Navigation */}
       <BottomNav />
+
+      {/* Onboarding Guide */}
+      <OnboardingGuide />
     </div>
   );
 };
