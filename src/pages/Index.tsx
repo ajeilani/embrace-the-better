@@ -19,20 +19,20 @@ const Index = () => {
           </div>
 
           {/* Compact Metrics */}
-          <div className="flex gap-2 sm:gap-4 overflow-x-auto pb-1 -mb-1">
-            <div className="flex items-center gap-1.5 bg-orange-50 rounded-full px-3 py-1.5 border border-orange-100 flex-shrink-0">
-              <Flame className="h-3.5 w-3.5 text-orange-500" />
-              <span className="text-xs font-bold text-foreground">7</span>
+          <div className="flex justify-between gap-2">
+            <div className="flex items-center gap-1.5 bg-orange-50 rounded-full px-3 py-2 border border-orange-100">
+              <Flame className="h-4 w-4 text-orange-500" />
+              <span className="text-sm font-bold text-foreground">7</span>
               <span className="text-xs text-muted-foreground">Streak</span>
             </div>
-            <div className="flex items-center gap-1.5 bg-blue-50 rounded-full px-3 py-1.5 border border-blue-100 flex-shrink-0">
-              <Clock className="h-3.5 w-3.5 text-blue-500" />
-              <span className="text-xs font-bold text-foreground whitespace-nowrap">0h 10m</span>
+            <div className="flex items-center gap-1.5 bg-blue-50 rounded-full px-3 py-2 border border-blue-100">
+              <Clock className="h-4 w-4 text-blue-500" />
+              <span className="text-sm font-bold text-foreground whitespace-nowrap">0h 10m</span>
               <span className="text-xs text-muted-foreground">Time</span>
             </div>
-            <div className="flex items-center gap-1.5 bg-yellow-50 rounded-full px-3 py-1.5 border border-yellow-100 flex-shrink-0">
-              <Zap className="h-3.5 w-3.5 text-yellow-500" />
-              <span className="text-xs font-bold text-foreground">850</span>
+            <div className="flex items-center gap-1.5 bg-yellow-50 rounded-full px-3 py-2 border border-yellow-100">
+              <Zap className="h-4 w-4 text-yellow-500" />
+              <span className="text-sm font-bold text-foreground">850</span>
               <span className="text-xs text-muted-foreground">XP</span>
             </div>
           </div>
