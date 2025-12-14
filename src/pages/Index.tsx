@@ -1,4 +1,4 @@
-import { Flame, Clock, Zap, Bell } from "lucide-react";
+import { Flame, Clock, Zap, User } from "lucide-react";
 import { WordOfDayCard } from "@/components/WordOfDayCard";
 import { ExploreSection } from "@/components/ExploreSection";
 import { BottomNav } from "@/components/BottomNav";
@@ -18,8 +18,8 @@ const Index = () => {
                 Alexander
               </h1>
             </div>
-            <button className="w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center text-muted-foreground hover:bg-muted transition-colors">
-              <Bell className="h-5 w-5" />
+            <button className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors">
+              <User className="h-5 w-5" />
             </button>
           </div>
 
