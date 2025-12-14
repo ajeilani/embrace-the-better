@@ -6,7 +6,21 @@ import { OnboardingGuide } from "@/components/OnboardingGuide";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background pb-20 sm:pb-24">
+    <div className="min-h-screen bg-background pb-20 sm:pb-24 relative overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Large gradient circle top right */}
+        <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full bg-gradient-to-br from-primary/20 to-accent/10 blur-3xl animate-float" />
+        
+        {/* Medium circle left */}
+        <div className="absolute top-1/3 -left-20 w-48 h-48 rounded-full bg-gradient-to-tr from-accent/15 to-primary/5 blur-2xl animate-float-delayed" />
+        
+        {/* Small accent circle bottom right */}
+        <div className="absolute bottom-1/4 right-10 w-32 h-32 rounded-full bg-primary/10 blur-2xl animate-float-slow" />
+        
+        {/* Subtle gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+      </div>
       {/* Header */}
       <header className="px-4 pt-4 pb-4 sm:px-6 sm:pt-6 sm:pb-5 animate-fade-in border-b border-border/50">
         <div className="mx-auto max-w-2xl">
