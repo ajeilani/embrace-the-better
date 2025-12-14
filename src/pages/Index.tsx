@@ -18,27 +18,21 @@ const Index = () => {
           </div>
 
           {/* Compact Metrics */}
-          <div className="flex gap-3 sm:gap-4">
-            <div className="flex items-center gap-2 bg-orange-50 rounded-full px-4 py-2 border border-orange-100">
+          <div className="flex gap-2 sm:gap-3">
+            <div className="flex items-center gap-1.5 bg-orange-50 rounded-full px-3 py-1.5 border border-orange-100">
               <Flame className="h-4 w-4 text-orange-500" />
-              <div className="flex items-baseline gap-1">
-                <span className="text-sm font-bold text-foreground">7</span>
-                <span className="text-xs text-muted-foreground">Streak</span>
-              </div>
+              <span className="text-sm font-bold text-foreground">7</span>
+              <span className="text-xs text-muted-foreground hidden sm:inline">day</span>
             </div>
-            <div className="flex items-center gap-2 bg-blue-50 rounded-full px-4 py-2 border border-blue-100">
+            <div className="flex items-center gap-1.5 bg-blue-50 rounded-full px-3 py-1.5 border border-blue-100">
               <Clock className="h-4 w-4 text-blue-500" />
-              <div className="flex items-baseline gap-1">
-                <span className="text-sm font-bold text-foreground">12.5h</span>
-                <span className="text-xs text-muted-foreground">This Week</span>
-              </div>
+              <span className="text-sm font-bold text-foreground">12.5h</span>
+              <span className="text-xs text-muted-foreground hidden sm:inline">/wk</span>
             </div>
-            <div className="flex items-center gap-2 bg-yellow-50 rounded-full px-4 py-2 border border-yellow-100">
+            <div className="flex items-center gap-1.5 bg-yellow-50 rounded-full px-3 py-1.5 border border-yellow-100">
               <Zap className="h-4 w-4 text-yellow-500" />
-              <div className="flex items-baseline gap-1">
-                <span className="text-sm font-bold text-foreground">850</span>
-                <span className="text-xs text-muted-foreground">XP</span>
-              </div>
+              <span className="text-sm font-bold text-foreground">850</span>
+              <span className="text-xs text-muted-foreground hidden sm:inline">XP</span>
             </div>
           </div>
         </div>
