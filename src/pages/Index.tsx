@@ -26,8 +26,8 @@ const Index = () => {
               <span className="text-xs text-muted-foreground">Streak</span>
             </div>
             <div className="flex items-center gap-2 bg-blue-50 rounded-full px-4 py-2 border border-blue-100">
-              <Clock className="h-4 w-4 text-blue-500" />
-              <span className="text-sm font-bold text-foreground">0h 10m</span>
+              <Clock className="h-4 w-4 text-blue-500 flex-shrink-0" />
+              <span className="text-sm font-bold text-foreground whitespace-nowrap">0h 10m</span>
               <span className="text-xs text-muted-foreground">Time</span>
             </div>
             <div className="flex items-center gap-2 bg-yellow-50 rounded-full px-4 py-2 border border-yellow-100">
