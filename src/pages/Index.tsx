@@ -30,7 +30,7 @@ const Index = () => {
               <Clock className="h-4 w-4 text-blue-500" />
               <div className="flex items-baseline gap-1">
                 <span className="text-sm font-bold text-foreground">12.5h</span>
-                <span className="text-xs text-muted-foreground">Time</span>
+                <span className="text-xs text-muted-foreground">This Week</span>
               </div>
             </div>
             <div className="flex items-center gap-2 bg-yellow-50 rounded-full px-4 py-2 border border-yellow-100">
