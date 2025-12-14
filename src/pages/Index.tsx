@@ -7,7 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background pb-20 sm:pb-24 relative overflow-hidden">
+    <div className="min-h-screen bg-background pb-28 sm:pb-28 relative overflow-x-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         {/* Large gradient circle top right */}
