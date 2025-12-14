@@ -34,11 +34,12 @@ export const WordOfDayCard = () => {
     >
       {/* Header with Badge and Actions */}
       <div className="flex items-center justify-between mb-4">
+        <div className="w-16" /> {/* Spacer for centering */}
         <div className="inline-flex items-center gap-1.5 bg-primary/10 px-3 py-1.5 rounded-full border border-primary/20">
           <span className="text-sm">✨</span>
           <span className="text-xs font-semibold text-primary">Word of the Day</span>
         </div>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 w-16 justify-end">
           <Button
             variant="ghost"
             size="icon"
