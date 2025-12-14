@@ -1,11 +1,17 @@
 import { Volume2, Bookmark } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 export const WordOfDayCard = () => {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
   const [isSaved, setIsSaved] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const { toast } = useToast();
+
+  const arabicWord = "جَمِيلَة";
+  const arabicSentence = "هَذِهِ وَثِيقَةٌ جَمِيلَةٌ";
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
@@ -23,6 +29,54 @@ export const WordOfDayCard = () => {
     if (touchStart - touchEnd < -75) {
       console.log("Swiped right");
     }
+  };
+
+  const speakArabic = () => {
+    if (isPlaying) return;
+    
+    if (!('speechSynthesis' in window)) {
+      toast({
+        title: "Not supported",
+        description: "Text-to-speech is not supported in your browser.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsPlaying(true);
+    
+    // Cancel any ongoing speech
+    window.speechSynthesis.cancel();
+
+    // Speak the word first
+    const wordUtterance = new SpeechSynthesisUtterance(arabicWord);
+    wordUtterance.lang = 'ar-SA';
+    wordUtterance.rate = 0.8;
+
+    // Speak the sentence after the word
+    const sentenceUtterance = new SpeechSynthesisUtterance(arabicSentence);
+    sentenceUtterance.lang = 'ar-SA';
+    sentenceUtterance.rate = 0.8;
+
+    wordUtterance.onend = () => {
+      setTimeout(() => {
+        window.speechSynthesis.speak(sentenceUtterance);
+      }, 500);
+    };
+
+    sentenceUtterance.onend = () => {
+      setIsPlaying(false);
+    };
+
+    sentenceUtterance.onerror = () => {
+      setIsPlaying(false);
+    };
+
+    wordUtterance.onerror = () => {
+      setIsPlaying(false);
+    };
+
+    window.speechSynthesis.speak(wordUtterance);
   };
 
   return (
@@ -43,7 +97,9 @@ export const WordOfDayCard = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="h-8 w-8 rounded-full text-muted-foreground hover:text-primary hover:bg-primary/10"
+            onClick={speakArabic}
+            disabled={isPlaying}
+            className={`h-8 w-8 rounded-full text-muted-foreground hover:text-primary hover:bg-primary/10 ${isPlaying ? 'text-primary animate-pulse' : ''}`}
           >
             <Volume2 className="h-4 w-4" />
           </Button>
@@ -61,7 +117,7 @@ export const WordOfDayCard = () => {
       {/* Word and Translation */}
       <div className="text-center mb-4">
         <h3 className="text-4xl font-arabic font-bold text-foreground mb-1" dir="rtl">
-          جميلة
+          {arabicWord}
         </h3>
         <p className="text-lg font-semibold text-primary">Beautiful</p>
       </div>
@@ -69,7 +125,7 @@ export const WordOfDayCard = () => {
       {/* Example Sentence */}
       <div className="rounded-xl bg-muted/30 p-4 text-center">
         <p className="text-xl font-arabic text-foreground mb-2 leading-relaxed" dir="rtl">
-          هذه وثيقة جميلة
+          {arabicSentence}
         </p>
         <p className="text-sm font-semibold text-foreground">
           This is a beautiful document
