@@ -67,11 +67,11 @@ export const WordOfDayCard = () => {
       </div>
 
       {/* Example Sentence */}
-      <div className="rounded-xl bg-muted/50 p-3 text-center border border-border/30">
-        <p className="text-base font-arabic text-foreground mb-1" dir="rtl">
+      <div className="rounded-xl bg-muted/30 p-4 text-center">
+        <p className="text-xl font-arabic text-foreground mb-2 leading-relaxed" dir="rtl">
           هذه وثيقة جميلة
         </p>
-        <p className="text-sm font-medium text-foreground">
+        <p className="text-sm font-semibold text-foreground">
           This is a beautiful document
         </p>
       </div>
