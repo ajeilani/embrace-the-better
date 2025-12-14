@@ -32,55 +32,47 @@ export const WordOfDayCard = () => {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Header */}
-      <div className="mb-3 flex items-center justify-between">
-        <div className="flex-1 flex justify-center">
-          <div className="inline-flex items-center gap-1.5 bg-primary/10 px-3 py-1.5 rounded-full border border-primary/20">
-            <span className="text-sm">✨</span>
-            <span className="text-xs font-bold text-primary">
-              Word of the Day
-            </span>
-          </div>
+      {/* Header with Badge and Actions */}
+      <div className="flex items-center justify-between mb-4">
+        <div className="inline-flex items-center gap-1.5 bg-primary/10 px-3 py-1.5 rounded-full border border-primary/20">
+          <span className="text-sm">✨</span>
+          <span className="text-xs font-semibold text-primary">Word of the Day</span>
         </div>
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => setIsSaved(!isSaved)}
-          className="h-7 w-7 rounded-full"
-        >
-          <Bookmark className={`h-3.5 w-3.5 ${isSaved ? 'fill-primary text-primary' : ''}`} />
-        </Button>
-      </div>
-
-      {/* Main Content */}
-      <div className="space-y-3">
-        {/* Arabic Word with Listen Button */}
-        <div className="flex items-center justify-center gap-2">
-          <h3 className="text-3xl font-arabic font-bold text-foreground leading-tight sm:text-4xl">
-            جميلة
-          </h3>
+        <div className="flex items-center gap-1">
           <Button
             variant="ghost"
             size="icon"
-            className="h-8 w-8 rounded-full text-primary hover:bg-primary/10"
+            className="h-8 w-8 rounded-full text-muted-foreground hover:text-primary hover:bg-primary/10"
           >
             <Volume2 className="h-4 w-4" />
           </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsSaved(!isSaved)}
+            className="h-8 w-8 rounded-full text-muted-foreground hover:text-primary hover:bg-primary/10"
+          >
+            <Bookmark className={`h-4 w-4 ${isSaved ? 'fill-primary text-primary' : ''}`} />
+          </Button>
         </div>
-        
-        <p className="text-lg font-bold text-primary text-center sm:text-xl">
-          Beautiful
-        </p>
+      </div>
 
-        {/* Example Sentence */}
-        <div className="space-y-1.5 rounded-xl bg-secondary/40 p-3 sm:p-4 text-center border border-border/50">
-          <p className="text-sm font-arabic font-semibold text-foreground leading-relaxed sm:text-base" dir="rtl">
-            هذه وثيقة جميلة
-          </p>
-          <p className="text-xs font-bold text-foreground leading-relaxed sm:text-sm">
-            This is a beautiful document
-          </p>
-        </div>
+      {/* Word and Translation */}
+      <div className="text-center mb-4">
+        <h3 className="text-4xl font-arabic font-bold text-foreground mb-1" dir="rtl">
+          جميلة
+        </h3>
+        <p className="text-lg font-semibold text-primary">Beautiful</p>
+      </div>
+
+      {/* Example Sentence */}
+      <div className="rounded-xl bg-muted/50 p-3 text-center border border-border/30">
+        <p className="text-base font-arabic text-foreground mb-1" dir="rtl">
+          هذه وثيقة جميلة
+        </p>
+        <p className="text-sm font-medium text-foreground">
+          This is a beautiful document
+        </p>
       </div>
     </div>
   );
