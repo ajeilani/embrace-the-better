@@ -38,6 +38,9 @@ export const OnboardingGuide = () => {
   const [currentStep, setCurrentStep] = useState(0);
 
   useEffect(() => {
+    // Reset for testing - remove this line after testing
+    localStorage.removeItem("hasSeenOnboarding");
+    
     const hasSeenOnboarding = localStorage.getItem("hasSeenOnboarding");
     if (!hasSeenOnboarding) {
       setOpen(true);
