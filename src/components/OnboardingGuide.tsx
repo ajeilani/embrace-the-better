@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Flame, Clock, Zap, ArrowRight, X } from "lucide-react";
+import { Flame, Clock, Zap, ArrowRight } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -66,15 +66,7 @@ export const OnboardingGuide = () => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="sm:max-w-md">
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={handleClose}
-          className="absolute right-4 top-4 h-8 w-8 rounded-full"
-        >
-          <X className="h-4 w-4" />
-          <span className="sr-only">Close</span>
-        </Button>
+        
         
         <DialogHeader className="text-center sm:text-center">
           <div className="mx-auto mb-4">
