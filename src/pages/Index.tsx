@@ -5,6 +5,13 @@ import { BottomNav } from "@/components/BottomNav";
 import { OnboardingGuide } from "@/components/OnboardingGuide";
 
 const Index = () => {
+  const getGreeting = () => {
+    const hour = new Date().getHours();
+    if (hour < 12) return "Good Morning";
+    if (hour < 18) return "Good Afternoon";
+    return "Good Evening";
+  };
+
   return (
     <div className="min-h-screen bg-background pb-20 sm:pb-24">
       {/* Header */}
@@ -13,8 +20,8 @@ const Index = () => {
           {/* Welcome Section */}
           <div className="flex items-center justify-between mb-5">
             <div>
-              <p className="text-sm text-muted-foreground mb-1">Welcome Back 👋</p>
-              <h1 className="text-2xl font-bold text-foreground sm:text-3xl">
+              <p className="text-sm text-muted-foreground mb-0.5">{getGreeting()} 👋</p>
+              <h1 className="text-2xl font-bold text-foreground sm:text-3xl tracking-tight">
                 Alexander
               </h1>
             </div>
