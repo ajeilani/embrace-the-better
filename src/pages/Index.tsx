@@ -8,7 +8,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background pb-20 sm:pb-24 relative overflow-hidden">
       {/* Decorative Background Elements */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         {/* Large gradient circle top right */}
         <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full bg-gradient-to-br from-primary/20 to-accent/10 blur-3xl animate-float" />
         
@@ -21,8 +21,10 @@ const Index = () => {
         {/* Subtle gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
       </div>
+
+
       {/* Header */}
-      <header className="px-4 pt-4 pb-4 sm:px-6 sm:pt-6 sm:pb-5 animate-fade-in border-b border-border/50">
+      <header className="relative z-10 px-4 pt-4 pb-4 sm:px-6 sm:pt-6 sm:pb-5 animate-fade-in border-b border-border/50">
         <div className="mx-auto max-w-2xl">
           {/* Welcome Section */}
           <div className="flex items-center justify-between mb-5">
@@ -59,7 +61,7 @@ const Index = () => {
       </header>
 
       {/* Main Content */}
-      <main className="px-4 pt-4 sm:px-6 sm:pt-5">
+      <main className="relative z-10 px-4 pt-4 sm:px-6 sm:pt-5">
         <div className="mx-auto max-w-2xl">
           {/* Word of the Day */}
           <WordOfDayCard />
