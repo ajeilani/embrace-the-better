@@ -11,11 +11,16 @@ const Index = () => {
       <header className="px-4 pt-4 pb-4 sm:px-6 sm:pt-6 sm:pb-5 animate-fade-in border-b border-border/50">
         <div className="mx-auto max-w-2xl">
           {/* Welcome Section */}
-          <div className="mb-5">
-            <p className="text-sm text-muted-foreground mb-1">Welcome Back 👋</p>
-            <h1 className="text-2xl font-bold text-foreground sm:text-3xl">
-              Alexander
-            </h1>
+          <div className="flex items-center justify-between mb-5">
+            <div>
+              <p className="text-sm text-muted-foreground mb-1">Welcome Back 👋</p>
+              <h1 className="text-2xl font-bold text-foreground sm:text-3xl">
+                Alexander
+              </h1>
+            </div>
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">
+              A
+            </div>
           </div>
 
           {/* Compact Metrics */}
