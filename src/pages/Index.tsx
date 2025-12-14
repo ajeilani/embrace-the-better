@@ -1,4 +1,4 @@
-import { Flame, Clock, Zap } from "lucide-react";
+import { Flame, Clock, Zap, Bell } from "lucide-react";
 import { WordOfDayCard } from "@/components/WordOfDayCard";
 import { ExploreSection } from "@/components/ExploreSection";
 import { BottomNav } from "@/components/BottomNav";
@@ -13,14 +13,14 @@ const Index = () => {
           {/* Welcome Section */}
           <div className="flex items-center justify-between mb-5">
             <div>
-              <p className="text-sm text-muted-foreground mb-1">Welcome Back 👋</p>
-              <h1 className="text-2xl font-bold text-foreground sm:text-3xl">
+              <p className="text-lg font-semibold text-foreground mb-0.5">Welcome Onboard 👋</p>
+              <h1 className="text-2xl font-bold text-primary sm:text-3xl">
                 Alexander
               </h1>
             </div>
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg">
-              A
-            </div>
+            <button className="w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center text-muted-foreground hover:bg-muted transition-colors">
+              <Bell className="h-5 w-5" />
+            </button>
           </div>
 
           {/* Compact Metrics */}
