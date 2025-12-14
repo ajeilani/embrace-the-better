@@ -1,8 +1,9 @@
-import { Flame, Clock, Zap, User } from "lucide-react";
+import { Flame, Clock, Zap } from "lucide-react";
 import { WordOfDayCard } from "@/components/WordOfDayCard";
 import { ExploreSection } from "@/components/ExploreSection";
 import { BottomNav } from "@/components/BottomNav";
 import { OnboardingGuide } from "@/components/OnboardingGuide";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Index = () => {
   return (
@@ -34,9 +35,10 @@ const Index = () => {
                 Alexander
               </h1>
             </div>
-            <button className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors">
-              <User className="h-5 w-5" />
-            </button>
+            <Avatar className="w-11 h-11 border-2 border-primary/20">
+              <AvatarImage src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Profile" />
+              <AvatarFallback className="bg-primary/10 text-primary font-semibold">A</AvatarFallback>
+            </Avatar>
           </div>
 
           {/* Compact Metrics */}
