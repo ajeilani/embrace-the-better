@@ -1,11 +1,15 @@
+import { useState } from "react";
 import { Flame, Clock, Zap } from "lucide-react";
 import { WordOfDayCard } from "@/components/WordOfDayCard";
 import { ExploreSection } from "@/components/ExploreSection";
 import { BottomNav } from "@/components/BottomNav";
 import { OnboardingGuide } from "@/components/OnboardingGuide";
+import { SubscriptionPopup } from "@/components/SubscriptionPopup";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Index = () => {
+  const [showSubscription, setShowSubscription] = useState(false);
+
   return (
     <div className="min-h-screen bg-background pb-28 sm:pb-28 relative overflow-x-hidden">
       {/* Decorative Background Elements */}
@@ -48,11 +52,15 @@ const Index = () => {
               <span className="text-sm font-bold text-foreground">7</span>
               <span className="text-xs text-muted-foreground">Streak</span>
             </div>
-            <div className="flex items-center gap-1.5 bg-blue-50 rounded-full px-3 py-2 border border-blue-100">
+            <button
+              type="button"
+              onClick={() => setShowSubscription(true)}
+              className="flex items-center gap-1.5 bg-blue-50 rounded-full px-3 py-2 border border-blue-100 transition-transform active:scale-95"
+            >
               <Clock className="h-4 w-4 text-blue-500" />
               <span className="text-sm font-bold text-foreground whitespace-nowrap">0h 10m</span>
               <span className="text-xs text-muted-foreground">Time</span>
-            </div>
+            </button>
             <div className="flex items-center gap-1.5 bg-yellow-50 rounded-full px-3 py-2 border border-yellow-100">
               <Zap className="h-4 w-4 text-yellow-500" />
               <span className="text-sm font-bold text-foreground">850</span>
@@ -80,6 +88,12 @@ const Index = () => {
 
       {/* Onboarding Guide */}
       <OnboardingGuide />
+
+      {/* Subscription Popup */}
+      <SubscriptionPopup
+        open={showSubscription}
+        onOpenChange={setShowSubscription}
+      />
     </div>
   );
 };
